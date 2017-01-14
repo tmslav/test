@@ -1,6 +1,8 @@
 <template>
 	<div>
-		<hello></hello>
+		<router-link :to="{name:'home'}">Home</router-link>		
+		<router-link :to="{name:'list'}">List</router-link>		
+		<router-link :to="{name:'listvuex'}">ListVuex</router-link>		
 		<graph></graph>
 		<graph :area='this.is_area'></graph>
 		<router-view class="view"></router-view>

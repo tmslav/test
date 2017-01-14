@@ -4,14 +4,18 @@ import Vue from 'vue'
 import App from './App.vue'
 import List from './List.vue'
 import Item from './Item.vue'
+import ListVuex from './ListVuex.vue'
+import ItemVuex from './ItemVuex.vue'
 
 import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 
 const routes = [
-	{path:'/',component:App},
+	{path:'/',name:'home',component:App},
 	{path:'/list',name:'list',component:List},
-	{path:'/list/:id',name:'item',component:Item}
+	{path:'/list/:id',name:'item',component:Item},
+	{path:'/listvuex',name:'listvuex',component:ListVuex},
+	{path:'listvuex',name:'itemvuex',component:ItemVuex}
 ]
 
 var router = new VueRouter({routes})
