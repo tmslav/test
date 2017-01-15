@@ -1,12 +1,17 @@
 # test
 
 > A Vue.js project
-
+## Install
+```bash
+git clone https://github.com/tmslav/test
+cd test
+```
 ## Build Setup
 
 ``` bash
 # install dependencies
-npm install
+npm install --save
+npm install --save-dev
 
 # serve with hot reload at localhost:8080
 npm run dev
