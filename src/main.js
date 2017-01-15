@@ -21,6 +21,15 @@ const routes = [
 	{path:'/listvuex/:id',name:'itemvuex',component:ItemVuex}
 ]
 var router = new VueRouter({routes})
+//random function1
+setInterval(function(){   
+	     document.getElementById('monitor1').innerHTML=Math.floor((Math.random()*100)+1)+"%"
+	  }, 1000);
+
+//random function2
+setInterval(function(){   
+	     document.getElementById('monitor2').innerHTML=Math.floor((Math.random()*50)+1)+"%"
+	  }, 1000);
 new Vue({router,
 	data:function(){
 		return 	{users:this.users}
