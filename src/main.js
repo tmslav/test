@@ -9,6 +9,7 @@ import ItemVuex from './ItemVuex.vue'
 import VueRouter from 'vue-router'
 import Vres from 'vue-resource'
 import {store} from './store'
+import style from './style.less'
 Vue.use(VueRouter)
 Vue.use(Vres)
 
