@@ -1,8 +1,10 @@
 <template>
 	<div>
 		<router-link :to="{name:'list'}">Back</router-link>
-		<div> User ID{{$route.params.id}}</div>
-		<div> Username {{user.username}}</div>
+		<form>
+			<label>User ID:</label><input type="text" :value="$route.params.id" v-model='input1'/>
+			<label>Username</label><input type="text" v-model="username"/>
+		</form>
 		<router-view class="view"></router-view>
 	</div>
 </template>
@@ -12,22 +14,28 @@
 	import Vres from 'vue-resource'
 	import _ from 'lodash'
 
+
 	export default {
 		name: 'item',
 		data :function(){
-			return {user:{}}
+			return {input1:this.$route.params.id,user:{},}
 		},
 		created(){
 			this.loadUsers()
 		},
+		computed:{
+			username:function(val){
+				return this.user.username
+			}
+		},
 		methods:{
 			loadUsers:function(){
-
+				let id = this.$route.params.id
 				this.$http.get("/static/users.json").then((response)=>{
-					let id = this.$route.params.id
 					this.user = _.find(response.body,function(o){return id==o.id})
 				})
 			},
+
 		}
 	}
 </script>
